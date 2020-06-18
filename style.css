@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;700&display=swap');
+
 main {
     width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #b0bec5;
+    background: #c8e6c9;
 }
 
 * {
@@ -14,22 +15,67 @@ main {
 }
 
 svg {
-    background: #EFECEA;
-}
-
-.bar {
-    fill: #A0B700;
+    background: #fff;
+    overflow-x: scroll;
 }
 
 .bar:hover {
-    fill: #5C8100;
+    opacity: 1;
+    stroke: black;
+    stroke-width: 1px;
 }
 
-.title {
+.temp-1 {
+    fill: #002984;
+}
+
+.temp-2 {
+    fill: #3f51b5;
+}
+
+.temp-3 {
+    fill: #2196f3;
+}
+
+.temp-4 {
+    fill: #6ec6ff;
+}
+
+.temp-5 {
+    fill: #9be7ff;
+}
+
+.temp-6 {
+    fill: #fff9c4;
+}
+
+.temp-7 {
+    fill: #ffe082;
+}
+
+.temp-8 {
+    fill: #ffb74d;
+}
+
+.temp-9 {
+    fill: #ff7043;
+}
+
+.temp-10 {
+    fill: #f44336;
+}
+
+.temp-11 {
+    fill: #ba000d;
+}
+.title{
     font-size: 30px;
     font-weight: 700;
 }
-
+.subtitle{
+    font-size: 20px;
+    font-weight: 400;
+}
 .title-container {
     background: #F5F3F2;
 }
@@ -39,10 +85,12 @@ html {
 }
 
 .domain,
-.tick line {
+.tick line{
     stroke: #C0C0BB;
 }
-
+.line {
+    fill: #C0C0BB;
+}
 text {
     font-size: 12px;
     fill: #635F5D;
@@ -57,19 +105,21 @@ text {
 .tick text {
     font-weight: 700;
 }
-div.tooltip, svg{
+
+div.tooltip,
+svg {
     box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
 }
-div.tooltip{
-    position: absolute;			
-    text-align: center;	
-    font-weight: 300;		
-    width: 150px;					
+
+div.tooltip {
+    position: absolute;
+    text-align: center;
+    font-weight: 300;
     padding: 10px;
-    font-size: 16px;
-    color:#fff;		
-    background: #635F5D;	
-    border: 0px;		
-    border-radius: 8px;			
-    pointer-events: none;	
+    font-size: 12px;
+    color: #fff;
+    background: #635F5D;
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
 }
