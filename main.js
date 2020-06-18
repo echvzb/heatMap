@@ -124,16 +124,21 @@ const render = (data) => {
     .attr("class", "tooltip")
     .style("opacity", 0);
   const widthBars = 5;
-  console.log(widthBars);
+
+  const header = svg.append("g").attr("transform", `translate(44,50)`);
+
+  header.append("text").text(title).attr("class", "title");
+  header.append("text").text(subtitle).attr("class", "subtitle").attr("y", 30);
   g.selectAll("rect")
     .data(dataSet)
     .enter()
     .append("rect")
-    .attr("x", (d) => xScale(xValue(d)))
-    .attr("width", widthBars)
     .attr("height", yScale.bandwidth())
     .attr("y", (d) => yScale(yValue(d)))
+    .attr("width", widthBars)
+    .style('opacity',0)
     .attr("class", (d) => "bar " + changeColor(d))
+    .attr("x", (d) => xScale(xValue(d)))
     .on("mouseover", (d) => {
       div.transition().duration(200).style("opacity", 0.9);
       div
@@ -143,11 +148,11 @@ const render = (data) => {
     })
     .on("mouseout", (d) => {
       div.transition().duration(500).style("opacity", 0);
-    });
-  const header = svg.append("g").attr("transform", `translate(44,50)`);
+    })
+    .transition().duration(2000)
+    .style('opacity',1)
+    ;
 
-  header.append("text").text(title).attr("class", "title");
-  header.append("text").text(subtitle).attr("class", "subtitle").attr("y", 30);
 };
 const dateParse = d3.timeParse("%Y");
 getData(url)
